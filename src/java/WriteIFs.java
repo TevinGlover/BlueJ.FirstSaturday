@@ -9,19 +9,24 @@ public class WriteIFs
 {
  
     public void playerDied(boolean player1) {
-        // Write an IF statement that checks “player1.isAlive()” 
+      if( player1 == isAlive(true)) {
+          return ; // Write an IF statement that checks “player1.isAlive()”
+      }else{
+          System.out.println("displayGameOver(player1)");
+      }
         // and if that’s false, calls “displayGameOver(player1)”
      
     }
     
     public String thermoSTAT(int room) {
-        // Write an IF statement that checks the 
-        // “temperature(room)” and if that check is less than 70, 
-        // calls “heatOn()” else calls “coolOn()”
 
-
-        
-        return this.ss;
+        // Write an IF statement that checks the
+        if (room > 70) {// “temperature(room)” and if that check is less than 70,
+             coolOn();
+        } else {// calls “heatOn()” else calls “coolOn()”
+            heatOn();
+        }
+       return this.ss;
     }
 
     public void fireplaceControl(Object fireplace1) {
@@ -75,11 +80,13 @@ public class WriteIFs
     private int tempurature(int t) {
         return t+2;
     }
-    private void heatOn() {
+    private String heatOn() {
         this.ss = "heating";
+        return null;
     }
-    private void coolOn() {
+    private String coolOn() {
         this.ss = "cooling";
+        return null;
     }
  
     private int insideTemp() {
