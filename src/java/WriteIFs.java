@@ -9,10 +9,10 @@ public class WriteIFs
 {
  
     public void playerDied(boolean player1) {
-      if( player1 == isAlive(true)) {
+       if (isAlive(player1)){
           return ; // Write an IF statement that checks “player1.isAlive()”
       }else{
-          System.out.println("displayGameOver(player1)");
+      displayGameOver(player1);
       }
         // and if that’s false, calls “displayGameOver(player1)”
      
@@ -29,18 +29,17 @@ public class WriteIFs
        return this.ss;
     }
 
-    public void fireplaceControl(Object fireplace1) {
-        // Write an IF statement that checks 
-        // “outsideTemp()” is less than 50 
-        // AND 
-        // “insideTemp()” is less than 62, 
-        // calls “startAFire(fireplace1)”
+    public void fireplaceControl(Object fireplace1) {// Write an IF statement that checks
+        if ( outsideTemp() < 50 && insideTemp()< 62){// “outsideTemp()” is less than 50 // AND  // “insideTemp()” is less than 62,
+           startAFire(fireplace1); // calls “startAFire(fireplace1)”
+        }
 
     }
 
     public void checkFuel(double fuelLevel) {
-        // Write an IF statement that checks “fuelLevel” 
-        // and if that check is less than 0.08, calls “refuel()”
+        if (fuelLevel< 0.08){
+          refuel(); // Write an IF statement that checks “fuelLevel”
+        }// and if that check is less than 0.08, calls “refuel()”
 
     }
 
