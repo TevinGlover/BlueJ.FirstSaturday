@@ -41,7 +41,7 @@ public class WriteLoops {
 
     public int startAtTwentyOne() {
         int w = 0;
-        for( int i = 21; i<= 30; i++) {
+        for( int i = 21; i<= 31; i++) {
 
             // Write a FOR loop that makes 10 iterations, start at 21.
             // calling
@@ -65,51 +65,51 @@ public class WriteLoops {
 
     public int byTwoTo32() {
         int w = 0;
-
-        // Write a FOR loop from 0 to 32 by 2s.
-        // calling
-        w = w + 1;
-        // each time through the loop
+        for(int i = 0; i <= 32; i+=2) {
+            // Write a FOR loop from 0 to 32 by 2s.
+            // calling
+            w = w + 1;
+            // each time through the loop
+        }
         return w;
     }
 
     public int countDownFrom5000() {
         int w = 0;
+        for (int i = 1; i < 5001; i+= 11) {
+
 
         // Write a FOR loop from 1 to less than 5001 by 11s.
         // calling
         w = w + 1;
         // each time through the loop
-        
+    }
         return w;
     }
 
     public int nestedFors() {
         int w = 0;
+        for (int i = 0; i < 20; i++) { // Write a nested FOR loop(s), where one counts from
 
-        // Write a nested FOR loop(s), where one counts from
-        // 0 to less than 20 and the inner one counts from 0 to 4
+            for (int j = 0; j <= 4; j++) {    // 0 to less than 20 and the inner one counts from 0 to 4
                 // calling
-                w = w + 1;
-                // each time through the inner loop
-
-        return w;
+                w = w + 1; // each time through the inner loop
+            }
+        } return w;
     }
-
     public int helloZipCode() {
         int w = 0;
-
-        // Write a FOR loop that counts from 5 to 105. Put an IF
-        // statement inside the loop that checks the
-        // loop index counter and if it’s greater than 51,
-        // prints “Hello Zipcode” instead of the statement w = w + 1;
-
-                // calling
+        for (int i = 5; i <= 105; i++) {// Write a FOR loop that counts from 5 to 105. Put an IF
+            if ( w > 51) {// statement inside the loop that checks the
+                // loop index counter and if it’s greater than 51,
+                System.out.println("Hello Zipcode");// prints “Hello Zipcode” instead of the statement w = w + 1;
+            } else {// calling
                 w = w + 1;
-            // each time through the inner loop
-        
-        return w;
+                // each time through the inner loop
+            }
+        }return w;
     }
+//*******************************?????????????????????????????^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     public void simpleLoops() {
         int i = 0;
@@ -128,7 +128,7 @@ public class WriteLoops {
         } while (i > 0);
         // what's the primary difference between them?!?
     }
-
+//????????????????????????????^^^^^^^^^^^^^^^^^^^^^^??????????????????????????????????????????
     // Write a WHILE loop that checks “gpsCurrentLocation()”
     // and if that is not equal to “Home” then and it calls “driveSomeMore()”.
     // After the loop is done, print “Honey, I’m Home!”
