@@ -100,7 +100,7 @@ public class WriteLoops {
     public int helloZipCode() {
         int w = 0;
         for (int i = 5; i <= 105; i++) {// Write a FOR loop that counts from 5 to 105. Put an IF
-            if ( w > 51) {// statement inside the loop that checks the
+            if ( i > 51) {// statement inside the loop that checks the
                 // loop index counter and if it’s greater than 51,
                 System.out.println("Hello Zipcode");// prints “Hello Zipcode” instead of the statement w = w + 1;
             } else {// calling
@@ -116,16 +116,16 @@ public class WriteLoops {
 
         // sample while loop
         while (i <= 5) {
-            System.out.println("Eww.");
+            System.out.println("Eww."); // the logic is in the while.
             i = i + 1;
         }
 
         // sample do...while loop
         i = 8;
         do {
-            System.out.println("Eww.");
+            System.out.println("Eww."); // the logic is in do.
             i = i - 1;
-        } while (i > 0);
+        } while (i > 0); // no brackets need.
         // what's the primary difference between them?!?
     }
 //????????????????????????????^^^^^^^^^^^^^^^^^^^^^^??????????????????????????????????????????
@@ -136,11 +136,15 @@ public class WriteLoops {
         int w = 0;
 
         // you need to use a .equals for two Strings.
-
-            // calling
+        while (gpsCurrentLocation() != "Home") {
+            // if not home drive some more and print out "not home"
+            driveSomeMore();
+            System.out.println(gpsCurrentLocation());
             w = w + 1;
-            // each time through the inner loop
-        
+        }
+        System.out.println("Honey, I’m Home!");
+        // each time through the inner loop
+
 
             return w;
     }
@@ -151,19 +155,24 @@ public class WriteLoops {
     // is less than “highestScore” and if it is, adds “currentScore” to
     // "runningScore"
     // and then sets “currentScore” to “gameNextScore()”
-    public int checkGameScore() {
+    public boolean checkGameScore() { // note error in int; post to be boolean.
         int w = 0;
         int highestScore = 236;
         int currentScore = gameNextScore();
         int runningScore = 0;
 
         // do your while loop here
- 
-            // calling
-            w = w + 1;
+        while (runningScore< highestScore){
+            runningScore  += currentScore ;
+            currentScore += gameNextScore();
+            w = w + 1;// calling
+
+        }
+
+
             // each time through the inner loop
-        
-        return w; // >= 3;
+
+        return w >= 2; // >= 3;
     }
 
     // Rewrite the previous WHILE loop as a DO..WHILE loop.
@@ -174,12 +183,16 @@ public class WriteLoops {
         int currentScore = gameNextScore();
         int runningScore = 0;
 
-        // do your while loop here
+        do {
+            runningScore  += currentScore ;
+            currentScore += gameNextScore();
+
+            // do your while loop here
 
             // calling
             w = w + 1;
             // each time through the inner loop
-
+        }while (highestScore < runningScore);
         return w >= 3;
     }
 
@@ -190,29 +203,43 @@ public class WriteLoops {
     public int checkServerStatus() {
         int w = 0;
         String adminPhoneNumber = "+1 202 456 1111";
-        
+        while( serverIsRunning()){
+            waitFor(5);
+            w = w + 1;
+            if( serverIsRunning()){
+                sendEmergencyText("help!",adminPhoneNumber );
+                tryServerRestart("hello", "+1 202 456 1111");
+                    // calling
 
-        // calling
-        w = w + 1;
-        // each time through the inner loop
-        
+                    // each time through the inner loop
+                }
+
+            }
         return w;
-    }
+        }
+
+
+
 
     // Declare an “int” i. Set i to 7.
     // Write a WHILE loop that checks “i” is less than 50,
     // and if it is, add 7 to “i”
     public int loop50by7() {
         int w = 0;
+        int i = 7;
+        while ( i < 50){
+            i =+ 7;
+            w = w + 1;
+        }
 
 
             // calling
-            w = w + 1;
+
             // each time through the inner loop
         
         return w;
     }
-
+//******************************************************************************************************************
     int[] threes_array = { 3, 6, 9, 12, 15, 18, 21 };
 
     // Foo is method that add the first 7 factors of three together and prints
@@ -321,7 +348,7 @@ public class WriteLoops {
         
         return w;
     }
-
+//*****************************************************************************************************************
     /**
      * CONGRATS, you've written all the code. Does it all pass their tests?!?
      * 
